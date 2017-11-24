@@ -12,7 +12,7 @@
 // This class just manages the attributes that the shaders use.
     struct Attributes
     {
-        Attributes (OpenGLContext& openGLContext, OpenGLShaderProgram& shaderProgram)
+        Attributes (const OpenGLContext& openGLContext, OpenGLShaderProgram& shaderProgram)
         {
             position      = createAttribute (openGLContext, shaderProgram, "position");
             normal        = createAttribute (openGLContext, shaderProgram, "normal");
@@ -20,7 +20,7 @@
             texureCoordIn = createAttribute (openGLContext, shaderProgram, "texureCoordIn");
         }
 
-        void enable (OpenGLContext& openGLContext)
+        void enable (const OpenGLContext& openGLContext)
         {
             if (position != nullptr)
             {
@@ -47,7 +47,7 @@
             }
         }
 
-        void disable (OpenGLContext& openGLContext)
+        void disable (const OpenGLContext& openGLContext)
         {
             if (position != nullptr)       openGLContext.extensions.glDisableVertexAttribArray (position->attributeID);
             if (normal != nullptr)         openGLContext.extensions.glDisableVertexAttribArray (normal->attributeID);
@@ -58,7 +58,7 @@
         ScopedPointer<OpenGLShaderProgram::Attribute> position, normal, sourceColour, texureCoordIn;
 
     private:
-        static OpenGLShaderProgram::Attribute* createAttribute (OpenGLContext& openGLContext,
+        static OpenGLShaderProgram::Attribute* createAttribute (const OpenGLContext& openGLContext,
                                                                 OpenGLShaderProgram& shader,
                                                                 const char* attributeName)
         {

@@ -5,6 +5,9 @@
               bundleIdentifier="com.yourcompany.MyQuadDev" includeBinaryInAppConfig="1"
               cppLanguageStandard="11" companyCopyright="" jucerVersion="5.2.0">
   <MAINGROUP id="MuPxZR" name="MyQuadDev">
+    <GROUP id="{07E7A4B6-3FA7-187B-0ED4-8950E84F478B}" name="Resources">
+      <FILE id="xGRXcD" name="nolie.png" compile="0" resource="1" file="Resources/nolie.png"/>
+    </GROUP>
     <GROUP id="{6C22E173-ED8C-71BF-03E1-A2BA3FE9CDA6}" name="Source">
       <FILE id="oXTImj" name="ProceduralShape.h" compile="0" resource="0"
             file="Source/ProceduralShape.h"/>
@@ -45,6 +48,7 @@
         <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
   </EXPORTFORMATS>
@@ -53,6 +57,7 @@
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>

@@ -13,7 +13,7 @@
     // This class just manages the uniform values that the demo shaders use.
     struct Uniforms
     {
-        Uniforms (OpenGLContext& openGLContext, OpenGLShaderProgram& shaderProgram)
+        Uniforms (const OpenGLContext& openGLContext, OpenGLShaderProgram& shaderProgram)
         {
             projectionMatrix = createUniform (openGLContext, shaderProgram, "projectionMatrix");
             viewMatrix       = createUniform (openGLContext, shaderProgram, "viewMatrix");
@@ -26,6 +26,8 @@
 			mouse		= createUniform(openGLContext, shaderProgram, "iMouse");
 			date		= createUniform(openGLContext, shaderProgram, "iDate");
 			sampleRate	= createUniform(openGLContext, shaderProgram, "iSampleRate");
+			channel0	= createUniform(openGLContext, shaderProgram, "iChannel0");
+			feedback = createUniform(openGLContext, shaderProgram, "iFeedback");
 			
         }
 
@@ -38,10 +40,12 @@
 			frame,
 			mouse,
 			date,
-			sampleRate;
+			sampleRate,
+			channel0,
+			feedback;
 
     private:
-        static OpenGLShaderProgram::Uniform* createUniform (OpenGLContext& openGLContext,
+        static OpenGLShaderProgram::Uniform* createUniform (const OpenGLContext& openGLContext,
                                                             OpenGLShaderProgram& shaderProgram,
                                                             const char* uniformName)
         {
